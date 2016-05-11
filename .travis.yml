@@ -4,6 +4,8 @@ node_js:
   - "4.4.3"
   - "0.12"
   - "iojs"
+notifications:
+  slack: rubeniskov:I82ZGuYOEQrhl29wBbQFEdjP
 install:
   - npm install -g codecov istanbul
   - npm install
