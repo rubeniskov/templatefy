@@ -3,13 +3,13 @@
 [![Build Status][travis-badge]][travis-url]
 [![Coverage Status][coverage-badge]][coverage-url]
 [![Slack Status][slack-badge]][slack-url]
-[![Version][version-badge]][site-url]
-[![Downloads][downloads-badge]][site-url]
-[![Node][node-badge]][site-url]
+[![Version][version-badge]][npm-url]
+[![Downloads][downloads-badge]][npm-url]
+[![Node][node-badge]][npm-url]
 [![License][license-badge]][license-url]
 
 
-Templatefy is a html template manager with js injection, angular supported.
+[Templatefy][site-url] is a html template manager with js injection, angular supported.
 
 [![NPM][npm-img]][npm-url]
 
@@ -50,7 +50,7 @@ To use, add the `require` node module:
 [coverage-badge]: https://img.shields.io/codecov/c/github/rubeniskov/templatefy.svg?style=flat-square
 
 [slack-url]: http://slack.rubeniskov.com/
-[slack-badge]: http://slack.rubeniskov.com/badge.svg
+[slack-badge]: http://slack.rubeniskov.com/badge.svg?style=flat-square&maxAge=2592000
 
 [version-badge]: https://img.shields.io/npm/v/templatefy.svg?style=flat-square&maxAge=2592000
 [downloads-badge]: https://img.shields.io/npm/dm/templatefy.svg?style=flat-square&maxAge=2592000
