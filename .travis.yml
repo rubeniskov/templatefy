@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "5.10.1"
+  - "4.4.3"
+  - "0.12"
+  - "iojs"
+install:
+  - npm install -g codecov istanbul
+  - npm install
+script:
+  - istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec
+after_success:
+  - codecov
