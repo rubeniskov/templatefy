@@ -1,11 +1,13 @@
 # Templatefy
 
-[![Build Status][travis-img]][travis-url]
-[![License][license-img]][license-url]
-[![Coverage Status][coverage-img]][coverage-url]
-[![Version][version-img]][site-url]
-[![Downloads][downloads-img]][site-url]
-[![Node][node-img]][site-url]
+[![Build Status][travis-badge]][travis-url]
+[![Coverage Status][coverage-badge]][coverage-url]
+[![Slack Status][slack-badge]][slack-url]
+[![Version][version-badge]][site-url]
+[![Downloads][downloads-badge]][site-url]
+[![Node][node-badge]][site-url]
+[![License][license-badge]][license-url]
+
 
 Templatefy is a html template manager with js injection, angular supported.
 
@@ -39,17 +41,21 @@ To use, add the `require` node module:
 [npm-img]: https://nodei.co/npm/templatefy.png?downloads=true
 
 [travis-url]: https://travis-ci.org/rubeniskov/templatefy?branch=master
-[travis-img]: https://travis-ci.org/rubeniskov/templatefy.svg?style=flat-square
+[travis-badge]: https://travis-ci.org/rubeniskov/templatefy.svg?style=flat-square
 
 [license-url]: LICENSE
-[license-img]: https://img.shields.io/badge/license-WTFPL-blue.svg?style=flat-square
+[license-badge]: https://img.shields.io/badge/license-WTFPL-blue.svg?style=flat-square
 
 [coverage-url]: https://codecov.io/github/rubeniskov/templatefy
-[coverage-img]: https://img.shields.io/codecov/c/github/rubeniskov/templatefy.svg?style=flat-square
+[coverage-badge]: https://img.shields.io/codecov/c/github/rubeniskov/templatefy.svg?style=flat-square
 
-[version-img]: https://img.shields.io/npm/v/templatefy.svg?style=flat-square&maxAge=2592000
-[downloads-img]: https://img.shields.io/npm/dm/templatefy.svg?style=flat-square&maxAge=2592000
-[node-img]: https://img.shields.io/node/v/instsure.svg?style=flat-square
+[slack-url]: http://slack.rubeniskov.com/
+[slack-badge]: http://slack.rubeniskov.com/badge.svg
+
+[version-badge]: https://img.shields.io/npm/v/templatefy.svg?style=flat-square&maxAge=2592000
+[downloads-badge]: https://img.shields.io/npm/dm/templatefy.svg?style=flat-square&maxAge=2592000
+[node-badge]: https://img.shields.io/node/v/instsure.svg?style=flat-square
+
 
 [wtfpl-url]: http://www.wtfpl.net/
 [wtfpl-img]: http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl.svg
