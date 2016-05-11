@@ -46,13 +46,13 @@ describe('Templatefy', function() {
             });
         });
 
-        it('should require input argument if not pipe stdin defined', function(done) {
-            this.timeout(15000);
-            templatefy(function(error, stdout, stderr) {
-                console.log(error, stdout, stderr);
-                done();
-            });
-        });
+        // it('should require input argument if not pipe stdin defined', function(done) {
+        //     this.timeout(15000);
+        //     templatefy(function(error, stdout, stderr) {
+        //         console.log(error, stdout, stderr);
+        //         done();
+        //     });
+        // });
 
         // it('should require input argument if not pipe stdin defined', function(done) {
         //     this.timeout(15000);
