@@ -5,6 +5,7 @@
 [![Coverage Status][coverage-img]][coverage-url]
 [![Version][version-img]][site-url]
 [![Downloads][downloads-img]][site-url]
+[![Node][node-img]][site-url]
 
 Templatefy is a html template manager with js injection, angular supported.
 
@@ -48,6 +49,7 @@ To use, add the `require` node module:
 
 [version-img]: https://img.shields.io/npm/v/templatefy.svg?style=flat-square&maxAge=2592000
 [downloads-img]: https://img.shields.io/npm/dm/templatefy.svg?style=flat-square&maxAge=2592000
+[node-img]: https://img.shields.io/node/v/instsure.svg?style=flat-square
 
 [wtfpl-url]: http://www.wtfpl.net/
 [wtfpl-img]: http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl.svg
