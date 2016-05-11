@@ -1,0 +1,102 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+const
+    reg_log = /^log\-/,
+    reg_minify = /^minify\-/,
+    reg_angular = /^angular\-/,
+    under = require('underscore'),
+    path = require('path'),
+    fs = require('fs'),
+    util = require('util'),
+    tty = process.stdin.isTTY,
+    Templatefy = require('../lib/templatefy'),
+    options = under.each(under.extend(require('nomnom')
+
+/**
+ * Command line options.
+ */
+
+        .option('input', {
+            abbr: 'i',
+            help: 'Input html file template',
+            required: tty,
+            trasnform: function(value) {
+                console.log(value);
+                return tty ? value : process.stdin;
+            }
+        })
+        .option('output', {
+            abbr: 'o',
+            help: 'Output compiled js file templated'
+        })
+        .option('minify', {
+            abbr: 'm',
+            flag: true,
+            default: Templatefy.defaults.minify,
+            help: 'Enable HTML minification process; for minify options --minify-<option-name>',
+            transform: function(value){
+                return value === true ? {} : false;
+            }
+        })
+        .option('angular', {
+            abbr: 'a',
+            flag: true,
+            default: Templatefy.defaults.angular,
+            help: 'Angular templateCache injection',
+            transform: function(value){
+                return value === true ? {} : false;
+            }
+        })
+        .option('angular-module', {
+            abbr: 'am',
+            help: 'Angular module name'
+        })
+        .option('log-level', {
+            abbr: 'll',
+            flag: true,
+            default: Templatefy.defaults.log.level,
+            help: 'Enable HTML minification process; for minify options --minify-<option-name>'
+        })
+        .option('log-file', {
+            abbr: 'lf',
+            flag: true,
+            default: Templatefy.defaults.log.file,
+            help: 'Enable HTML minification process; for minify options --minify-<option-name>'
+        })
+        .option('version', {
+            abbr: 'v',
+            flag: true,
+            help: 'Print version and exit',
+            callback: function() {
+                return util.format("Version v%s", Templatefy.version);
+            }
+        })
+        .parse(), {
+            log: {},
+            _input: null,
+            _output: null
+        }), function(val, key, opts) {
+            switch(true){
+              case key === '_input':
+                  opts._input = opts.input ? opts.input : process.stdin;
+                  break;
+              case key === '_output':
+                  opts._output = opts.output ? opts.output : process.stdout;
+                  break;
+              case reg_log.test(key):
+                  opts.log[key.replace(reg_log, '')] = val;
+                  break;
+              case opts.angular && reg_angular.test(key):
+                  opts.angular[key.replace(reg_angular, '')] = val;
+                  break;
+              case opts.minify && reg_minify.test(key):
+                  opts.minify[key.replace(reg_minify, '')] = val;
+                  break;
+            }
+        });
+
+module.exports = Templatefy.parse(options, options._input, options._output);
