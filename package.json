@@ -1,0 +1,65 @@
+{
+  "name": "templatefy",
+  "version": "0.0.0",
+  "description": "A html template manager with js injection, angular supported",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rubeniskov/browserify-templatefy.git",
+    "url_commit": "git+https://github.com/rubeniskov/browserify-templatefy/commit",
+    "url_tag": "git+https://github.com/rubeniskov/browserify-templatefy/releases/tag"
+  },
+  "keywords": [
+    "template",
+    "minify",
+    "javascript",
+    "injection",
+    "wrapper",
+    "stream",
+    "html",
+    "angular"
+  ],
+  "author": {
+    "name": "Rubén López Gómez",
+    "email": "me@rubeniskov.com",
+    "url": "https://twitter.com/Rubeniskov"
+  },
+  "licenses": [
+    {
+      "type": "WTFPL",
+      "url": "https://github.com/rubeniskov/browserify-templatefy/blob/master/LICENSE.md"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/rubeniskov/browserify-templatefy/issues"
+  },
+  "homepage": "http://templatefy.rubeniskov.com",
+  "dependencies": {
+    "camelcase": "^3.0.0",
+    "html-minifier": "^2.1.2",
+    "instsure": "^0.1.2",
+    "nomnom": "^1.8.1",
+    "promise": "^7.1.1",
+    "q": "^1.4.1",
+    "stream-buffers": "^3.0.0",
+    "streamifier": "^0.1.1",
+    "through2": "^2.0.1",
+    "transformify": "^0.1.2",
+    "underscore": "^1.8.3",
+    "util-extend": "^1.0.3",
+    "winston": "^2.2.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "grunt": "^1.0.1",
+    "grunt-bump": "^0.8.0",
+    "grunt-npm": "0.0.2",
+    "mocha": "^2.4.5"
+  }
+}
