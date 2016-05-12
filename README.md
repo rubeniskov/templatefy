@@ -8,6 +8,8 @@
 [![Node][node-badge]][npm-url]
 [![License][license-badge]][license-url]
 
+[![Issues Open][issues-open-badge]][issues-url]
+[![Issue Resolution][issues-reso-badge]][issues-url]
 
 [Templatefy][site-url] is a html template manager with js injection, angular supported.
 
@@ -58,6 +60,9 @@ To use, add the `require` node module:
 [downloads-badge]: https://img.shields.io/npm/dm/templatefy.svg?style=flat-square&maxAge=2592000
 [node-badge]: https://img.shields.io/node/v/templatefy.svg?style=flat-square
 
+[issues-url]: https://github.com/rubeniskov/templatefy/issues
+[issues-open-badge]: http://isitmaintained.com/badge/open/rubeniskov/templatefy.svg
+[issues-reso-badge]: http://isitmaintained.com/badge/resolution/rubeniskov/templatefy.svg
 
 [wtfpl-url]: http://www.wtfpl.net/
 [wtfpl-img]: http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl.svg
