@@ -54,7 +54,7 @@ To use, add the `require` node module:
 
 [version-badge]: https://img.shields.io/npm/v/templatefy.svg?style=flat-square&maxAge=2592000
 [downloads-badge]: https://img.shields.io/npm/dm/templatefy.svg?style=flat-square&maxAge=2592000
-[node-badge]: https://img.shields.io/node/v/instsure.svg?style=flat-square
+[node-badge]: https://img.shields.io/node/v/templatefy.svg?style=flat-square
 
 
 [wtfpl-url]: http://www.wtfpl.net/
