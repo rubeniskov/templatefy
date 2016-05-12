@@ -12,6 +12,7 @@
 [Templatefy][site-url] is a html template manager with js injection, angular supported.
 
 [![NPM][npm-img]][npm-url]
+[![GRID][coverage-img]][coverage-url]
 
 Installation
 ============
@@ -47,6 +48,7 @@ To use, add the `require` node module:
 [license-badge]: https://img.shields.io/badge/license-WTFPL-blue.svg?style=flat-square
 
 [coverage-url]: https://codecov.io/github/rubeniskov/templatefy
+[coverage-img]: https://codecov.io/gh/rubeniskov/templatefy/branch/master/graphs/icicle.svg
 [coverage-badge]: https://img.shields.io/codecov/c/github/rubeniskov/templatefy.svg?style=flat-square
 
 [slack-url]: http://slack.rubeniskov.com/
