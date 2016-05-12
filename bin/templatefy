@@ -82,10 +82,10 @@ const
         }), function(val, key, opts) {
             switch(true){
               case key === '_input':
-                  opts._input = opts.input ? opts.input : process.stdin;
+                  opts._input = opts.input ? opts.input : 'stdin';
                   break;
               case key === '_output':
-                  opts._output = opts.output ? opts.output : process.stdout;
+                  opts._output = opts.output ? opts.output : 'stdout';
                   break;
               case reg_log.test(key):
                   opts.log[key.replace(reg_log, '')] = val;
