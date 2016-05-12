@@ -10,7 +10,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "node_modules/istanbul/lib/cli istanbul cover node_modules/mocha/bin/_mocha && node_modules/codecov/bin/codecov "
+    "test": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha && node_modules/codecov/bin/codecov"
   },
   "repository": {
     "type": "git",
