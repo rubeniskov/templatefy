@@ -48,7 +48,7 @@ To use, add the `require` node module:
 [license-badge]: https://img.shields.io/badge/license-WTFPL-blue.svg?style=flat-square
 
 [coverage-url]: https://codecov.io/github/rubeniskov/templatefy
-[coverage-img]: https://codecov.io/gh/rubeniskov/templatefy/branch/master/graphs/icicle.svg
+[coverage-img]: https://codecov.io/gh/rubeniskov/templatefy/branch/master/graphs/icicle.svg?width=400&height=72
 [coverage-badge]: https://img.shields.io/codecov/c/github/rubeniskov/templatefy.svg?style=flat-square
 
 [slack-url]: http://slack.rubeniskov.com/
