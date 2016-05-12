@@ -11,6 +11,6 @@ node_js:
 notifications:
   slack: rubeniskov:I82ZGuYOEQrhl29wBbQFEdjP
 install:
-  - npm install --dev
+  - npm install
 script:
   - npm test
