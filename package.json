@@ -48,13 +48,9 @@
     "html-minifier": "^2.1.2",
     "instsure": "^0.1.2",
     "nomnom": "^1.8.1",
-    "promise": "^7.1.1",
     "q": "^1.4.1",
-    "stream-buffers": "^3.0.0",
     "streamifier": "^0.1.1",
     "through2": "^2.0.1",
-    "transformify": "^0.1.2",
-    "underscore": "^1.8.3",
     "util-extend": "^1.0.3",
     "winston": "^2.2.0"
   },
