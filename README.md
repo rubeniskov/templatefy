@@ -45,24 +45,24 @@ To use, add the `require` node module:
 [npm-img]: https://nodei.co/npm/templatefy.png?downloads=true
 
 [travis-url]: https://travis-ci.org/rubeniskov/templatefy?branch=master
-[travis-badge]: https://travis-ci.org/rubeniskov/templatefy.svg?style=flat-square
+[travis-badge]: https://travis-ci.org/rubeniskov/templatefy.svg
 
 [license-url]: LICENSE
-[license-badge]: https://img.shields.io/badge/license-WTFPL-blue.svg?style=flat-square
+[license-badge]: https://img.shields.io/badge/license-WTFPL-blue.svg
 
 [codeclimate-url]: https://codeclimate.com/github/rubeniskov/templatefy
 [codeclimate-badge]: https://codeclimate.com/github/rubeniskov/templatefy/badges/gpa.svg
 
 [coverage-url]: https://codecov.io/github/rubeniskov/templatefy
 [coverage-img]: https://codecov.io/gh/rubeniskov/templatefy/branch/master/graphs/icicle.svg?width=400&height=72
-[coverage-badge]: https://img.shields.io/codecov/c/github/rubeniskov/templatefy.svg?style=flat-square
+[coverage-badge]: https://img.shields.io/codecov/c/github/rubeniskov/templatefy.svg
 
 [slack-url]: http://slack.rubeniskov.com/
-[slack-badge]: http://slack.rubeniskov.com/badge.svg?style=flat-square&maxAge=2592000
+[slack-badge]: http://slack.rubeniskov.com/badge.svg
 
-[version-badge]: https://img.shields.io/npm/v/templatefy.svg?style=flat-square&maxAge=2592000
-[downloads-badge]: https://img.shields.io/npm/dm/templatefy.svg?style=flat-square&maxAge=2592000
-[node-badge]: https://img.shields.io/node/v/templatefy.svg?style=flat-square
+[version-badge]: https://img.shields.io/npm/v/templatefy.svg
+[downloads-badge]: https://img.shields.io/npm/dm/templatefy.svg
+[node-badge]: https://img.shields.io/node/v/templatefy.svg
 
 [issues-url]: https://github.com/rubeniskov/templatefy/issues
 [issues-open-badge]: http://isitmaintained.com/badge/open/rubeniskov/templatefy.svg
