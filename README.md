@@ -2,14 +2,15 @@
 
 [![Build Status][travis-badge]][travis-url]
 [![Coverage Status][coverage-badge]][coverage-url]
+[![Climate Status][codeclimate-badge]][codeclimate-url]
+[![Issues Open][issues-open-badge]][issues-url]
+[![Issue Resolution][issues-reso-badge]][issues-url]
+
 [![Slack Status][slack-badge]][slack-url]
 [![Version][version-badge]][npm-url]
 [![Downloads][downloads-badge]][npm-url]
 [![Node][node-badge]][npm-url]
 [![License][license-badge]][license-url]
-
-[![Issues Open][issues-open-badge]][issues-url]
-[![Issue Resolution][issues-reso-badge]][issues-url]
 
 [Templatefy][site-url] is a html template manager with js injection, angular supported.
 
@@ -49,8 +50,11 @@ To use, add the `require` node module:
 [license-url]: LICENSE
 [license-badge]: https://img.shields.io/badge/license-WTFPL-blue.svg?style=flat-square
 
+[codeclimate-url]: https://codeclimate.com/github/rubeniskov/templatefy
+[codeclimate-badge]: https://codeclimate.com/github/rubeniskov/templatefy/badges/gpa.svg
+
 [coverage-url]: https://codecov.io/github/rubeniskov/templatefy
-[coverage-img]: https://codecov.io/gh/rubeniskov/templatefy/branch/master/graphs/icicle.svg?width=400&height=72
+[coverage-img]: https://codecov.io/gh/rubeniskov/templatefy/branch/master/graphs/icicle.svg
 [coverage-badge]: https://img.shields.io/codecov/c/github/rubeniskov/templatefy.svg?style=flat-square
 
 [slack-url]: http://slack.rubeniskov.com/
