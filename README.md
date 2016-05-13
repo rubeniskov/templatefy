@@ -6,10 +6,10 @@
 [![Issues Open][issues-open-badge]][issues-url]
 [![Issue Resolution][issues-reso-badge]][issues-url]
 
-[![Slack Status][slack-badge]][slack-url]
 [![Version][version-badge]][npm-url]
-[![Downloads][downloads-badge]][npm-url]
 [![Node][node-badge]][npm-url]
+[![Downloads][downloads-badge]][npm-url]
+[![Slack Status][slack-badge]][slack-url]
 [![License][license-badge]][license-url]
 
 [Templatefy][site-url] is a html template manager with js injection, angular supported.
