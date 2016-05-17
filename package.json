@@ -45,15 +45,19 @@
   "homepage": "http://templatefy.rubeniskov.com",
   "dependencies": {
     "camelcase": "^3.0.0",
+    "extend": "^3.0.0",
     "html-minifier": "^2.1.2",
     "inherify": "0.0.2",
     "instsure": "^0.1.2",
+    "interpolate": "^0.1.0",
     "nomnom": "^1.8.1",
+    "nutol": "^0.1.2",
+    "optiopus": "^0.1.2",
     "q": "^1.4.1",
     "streamifier": "^0.1.1",
     "through2": "^2.0.1",
     "underscore": "^1.8.3",
-    "util-extend": "^1.0.3",
+    "valtree": "^0.1.2",
     "winston": "^2.2.0"
   },
   "devDependencies": {
