@@ -5,10 +5,9 @@
  */
 
 const
-    reg_log = /^log\-/,
-    reg_minify = /^minify\-/,
-    reg_angular = /^angular\-/,
+    reg_delmiter = /\-/,
     under = require('underscore'),
+    valtree = require('valtree'),
     path = require('path'),
     fs = require('fs'),
     util = require('util'),
@@ -87,14 +86,8 @@ const
               case key === '_output':
                   opts._output = opts.output ? opts.output : 'stdout';
                   break;
-              case reg_log.test(key):
-                  opts.log[key.replace(reg_log, '')] = val;
-                  break;
-              case opts.angular && reg_angular.test(key):
-                  opts.angular[key.replace(reg_angular, '')] = val;
-                  break;
-              case opts.minify && reg_minify.test(key):
-                  opts.minify[key.replace(reg_minify, '')] = val;
+              case (reg_delmiter).test(key):
+                  valtree(key.replace(reg_delmiter, ''), val)
                   break;
             }
         });
