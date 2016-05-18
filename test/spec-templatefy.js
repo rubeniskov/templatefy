@@ -3,23 +3,60 @@ const
     fs = require('fs'),
     expect = require("chai").expect,
     execFile = require('child_process').execFile,
-    exec = require('child_process').exec,
+    cproc = require('child_process'),
     Templatefy = require("../lib/templatefy"),
-    cmd = path.resolve('./bin/templatefy'),
+    cli = path.resolve('./bin/templatefy'),
     pkg = JSON.parse(fs.readFileSync('./package.json'), 'utf8'),
+    instanbul_cli = path.join(require.resolve('istanbul'), '..', require('istanbul/package.json').bin.istanbul),
+    mocha = require.resolve('mocha'),
     templatefy = function() {
-        var args = Array.prototype.slice.call(arguments),
-            cb = args.splice(-1)[0];
+        var mproc, sproc,
+            args = Array.prototype.slice.call(arguments),
+            cb = args.splice(-1)[0],
+            targs = args.splice(-1)[0] || '',
+            pcmd = args.splice(-1)[0],
+            stdout = '',
+            stderr = '',
+            err = null,
+            cargs = [
+              'cover',
+              '--handle-sigint',
+              '--root', process.cwd(),
+              '--dir', path.join(process.cwd(), './coverage'),
+              '--report=none',
+              '--print=none',
+              '--include-pid',
+              cli, '--'
+            ].concat(targs);
 
-        return args[0] && args[0].join
-              ? exec([args[0].concat([cmd]).join('|')].concat(args.slice(1)).join(' '), cb)
-              : exec([cmd].concat(args).join(' '), cb);
+        mproc = cproc.fork(instanbul_cli, cargs, {cwd: process.cwd(), env: process.env, silent: true});
+
+        if(pcmd)
+            cproc.exec(pcmd).stdout.pipe(mproc.stdin);
+
+        mproc.on('error', function (e) {
+            err = new Error(e);
+        });
+
+        mproc.stdout.on('data', function (data) {
+            stdout += data.toString();
+        });
+
+        mproc.stderr.on('data', function (data) {
+            stderr += data.toString();
+        });
+
+        mproc.on('close', function (code) {
+            cb(err, stdout, stderr);
+        });
+
+        return mproc;
     };
 
 describe('Templatefy', function() {
 
     describe('#command-line', function() {
-
+        this.timeout(5000);
         it('should print help to stdout', function(done) {
             templatefy('--help', function(error, stdout, stderr) {
                 expect(stdout).to.have.string('Usage:');
@@ -47,11 +84,12 @@ describe('Templatefy', function() {
             });
         });
 
-        // it('should require --input argument if not pipe stdin defined', function(done) {
-        //    templatefy(function(error, stdout, stderr) {
-        //        done();
-        //    });
-        // });
+//        it('should require --input argument if not pipe stdin defined', function(done) {
+//            templatefy(function(error, stdout, stderr) {
+//                expect(stdout).to.have.string('input argument is required');
+//                done();
+//            });
+//        });
 
         it('should print the string template by input parameter to parsed through stdout', function(done) {
             templatefy('--input=\'<h1  title = "test">Test</h1>\'', function(error, stdout, stderr) {
@@ -60,26 +98,26 @@ describe('Templatefy', function() {
             });
         });
 
-        it('should print the path of template by input parameter to parsed through stdout', function(done) {
-            templatefy('--input=\'./test/fixtures/template-element.html\'', function(error, stdout, stderr) {
+        it('should print the string template by path input parameter to parsed through stdout', function(done) {
+            templatefy('--input=./test/fixtures/template-element.html', function(error, stdout, stderr) {
                 expect(stdout).to.have.string('<h1 title="test">Test</h1>');
                 done();
             });
         });
 
         it('should print the string template by stdin pipe to parsed through stdout', function(done) {
-            templatefy(['echo \'<h1  title = "test">Test</h1>\''], function(error, stdout, stderr) {
+            templatefy('echo \'<h1  title = "test">Test</h1>\'', null, function(error, stdout, stderr) {
                 expect(stdout).to.have.string('<h1 title="test">Test</h1>');
                 done();
             });
         });
 
-        it('should print the string template by stdin file redirection to parsed through stdout', function(done) {
-            templatefy('< ./test/fixtures/template-element.html', function(error, stdout, stderr) {
-                expect(stdout).to.have.string('<h1 title="test">Test</h1>');
-                done();
-            });
-        });
+//        it('should print the string template by stdin file redirection to parsed through stdout', function(done) {
+//            templatefy('< ./test/fixtures/template-element.html', function(error, stdout, stderr) {
+//                expect(stdout).to.have.string('<h1 title="test">Test</h1>');
+//                done();
+//            });
+//        });
     });
 
     describe('#api', function() {
