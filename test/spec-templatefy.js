@@ -111,13 +111,6 @@ describe('Templatefy', function() {
                 done();
             });
         });
-
-//        it('should print the string template by stdin file redirection to parsed through stdout', function(done) {
-//            templatefy('< ./test/fixtures/template-element.html', function(error, stdout, stderr) {
-//                expect(stdout).to.have.string('<h1 title="test">Test</h1>');
-//                done();
-//            });
-//        });
     });
 
     describe('#api', function() {
