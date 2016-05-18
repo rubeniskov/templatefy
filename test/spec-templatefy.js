@@ -26,8 +26,6 @@ describe('Templatefy', function() {
                 expect(stdout).to.have.string('-i, --input');
                 expect(stdout).to.have.string('-o, --output');
                 expect(stdout).to.have.string('-m, --minify');
-                expect(stdout).to.have.string('-a, --angular');
-                expect(stdout).to.have.string('-am, --angular-module');
                 expect(stdout).to.have.string('-ll, --log-level');
                 expect(stdout).to.have.string('-lf, --log-file');
                 expect(stdout).to.have.string('-v, --version ');
