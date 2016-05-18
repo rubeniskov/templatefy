@@ -122,16 +122,8 @@ describe('Templatefy', function() {
 
     describe('#api', function() {
 
-        // it('should instantiate templatefy object', function(done) {
-        //       Templatefy.parse();
-        // });
-        //
-        // it('should instantiate templatefy object', function(done) {
-        //
-        // });
+        it('should throw an Exception (Input stream error)', function() {
+             expect(Templatefy.parse).to.throw('Input stream error');
+        });
     });
 });
-
- // echo '<hola    asdasdasd="asdasd"></hola>' | node bin/templatefy --angular=true --angular-module='jaja' --log-level=debug
-
- // node bin/templatefy --input='<hola    asdasdasd="asdasd"></hola>' --angular=true --angular-module='jaja' --log-level=debug
