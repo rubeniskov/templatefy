@@ -5,7 +5,7 @@
  */
 
 const
-    reg_delmiter = /\-/,
+    reg_delmiter = /\-/ig,
     under = require('underscore'),
     valtree = require('valtree'),
     path = require('path'),
@@ -13,7 +13,8 @@ const
     util = require('util'),
     tty = process.stdin.isTTY,
     Templatefy = require('../lib/templatefy'),
-    options = under.each(under.extend(require('nomnom')
+    options = {};
+    under.each(under.extend(require('nomnom')
 
 /**
  * Command line options.
@@ -50,10 +51,6 @@ const
                 return value === true ? {} : false;
             }
         })
-        .option('angular-module', {
-            abbr: 'am',
-            help: 'Angular module name'
-        })
         .option('log-level', {
             abbr: 'll',
             flag: true,
@@ -75,21 +72,20 @@ const
             }
         })
         .parse(), {
-            log: {},
             _input: null,
             _output: null
         }), function(val, key, opts) {
             switch(true){
               case key === '_input':
-                  opts._input = opts.input ? opts.input : 'stdin';
+                  options.input = opts.input ? opts.input : 'stdin';
                   break;
               case key === '_output':
-                  opts._output = opts.output ? opts.output : 'stdout';
+                  options.output = opts.output ? opts.output : 'stdout';
                   break;
-              case (reg_delmiter).test(key):
-                  valtree(key.replace(reg_delmiter, ''), val)
+              default:
+                  valtree(options, key.replace(reg_delmiter, '.'), val);
                   break;
             }
         });
 
-module.exports = Templatefy.parse(options, options._input, options._output);
+module.exports = Templatefy.parse(options, options.input, options.output);
