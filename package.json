@@ -6,6 +6,9 @@
   "engines": {
     "node": ">=0.12"
   },
+  "bin": {
+    "templatefy": "./bin/templatefy"
+  },
   "directories": {
     "test": "test"
   },

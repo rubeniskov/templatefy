@@ -28,7 +28,6 @@ const
               '--include-pid',
               cli, '--'
             ].concat(targs);
-
         mproc = cproc.fork(instanbul_cli, cargs, {cwd: process.cwd(), env: process.env, silent: true});
 
         if(pcmd)
@@ -77,6 +76,13 @@ describe('Templatefy', function() {
             });
         });
 
+//        it('should require --input argument if not pipe stdin defined', function(done) {
+//            templatefy('--ouput=stdout', function(error, stdout, stderr) {
+//                expect(stdout).to.have.string('input argument is required');
+//                done();
+//            });
+//        });
+
         it('should show error unexpected paramenter message', function(done) {
             templatefy('--wrong-param', function(error, stdout, stderr) {
                 expect(stdout).to.have.string('\'--wrong-param\' expects a value');
@@ -84,29 +90,77 @@ describe('Templatefy', function() {
             });
         });
 
-//        it('should require --input argument if not pipe stdin defined', function(done) {
-//            templatefy(function(error, stdout, stderr) {
-//                expect(stdout).to.have.string('input argument is required');
-//                done();
-//            });
-//        });
-
-        it('should print the string template by input parameter to parsed through stdout', function(done) {
+        it('should get the string template by stdin then and print parsed over stdout', function(done) {
             templatefy('--input=\'<h1  title = "test">Test</h1>\'', function(error, stdout, stderr) {
                 expect(stdout).to.have.string('<h1 title="test">Test</h1>');
                 done();
             });
         });
 
-        it('should print the string template by path input parameter to parsed through stdout', function(done) {
+        it('should get the string template by input path parameter and print parsed over stdout', function(done) {
             templatefy('--input=./test/fixtures/template-element.html', function(error, stdout, stderr) {
                 expect(stdout).to.have.string('<h1 title="test">Test</h1>');
                 done();
             });
         });
 
-        it('should print the string template by stdin pipe to parsed through stdout', function(done) {
+        it('should get the string template by stdin pipe and print parsed over stdout', function(done) {
             templatefy('echo \'<h1  title = "test">Test</h1>\'', null, function(error, stdout, stderr) {
+                expect(stdout).to.have.string('<h1 title="test">Test</h1>');
+                done();
+            });
+        });
+
+        it('should get the string template by stdin then and save parsed into a file', function(done) {
+            templatefy('echo \'<h1  title = "test">Test</h1>\'', '--output=template.output.html', function(error, stdout, stderr) {
+                expect(fs.readFileSync('template.output.html', 'utf-8')).to.have.string('<h1 title="test">Test</h1>');
+                done();
+            });
+        });
+
+        it('should parsed template with angular module wrapper', function(done) {
+            templatefy(['--input=\'<h1  title = "test">Test</h1>\'', '--angular'], function(error, stdout, stderr) {
+                expect(stdout).to.have.string('angular.module');
+                expect(stdout).to.have.string('$templateCache');
+                expect(stdout).to.have.string('<h1 title="test">Test</h1>');
+                done();
+            });
+        });
+
+        it('should parsed template with angular module wrapper and defined custom module local variable name', function(done) {
+            templatefy(['--input=\'<h1  title = "test">Test</h1>\'', '--angular', '--angular-module-var=var_test'], function(error, stdout, stderr) {
+                expect(stdout).to.have.string('angular.module');
+                expect(stdout).to.have.string('$templateCache');
+                expect(stdout).to.have.string('var var_test');
+                expect(stdout).to.have.string('<h1 title="test">Test</h1>');
+                done();
+            });
+        });
+
+        it('should parsed template with angular module wrapper and defined custom module name', function(done) {
+            templatefy(['--input=\'<h1  title = "test">Test</h1>\'', '--angular', '--angular-module-name=module_test'], function(error, stdout, stderr) {
+                expect(stdout).to.have.string('angular.module');
+                expect(stdout).to.have.string('$templateCache');
+                expect(stdout).to.have.string('module_test');
+                expect(stdout).to.have.string('<h1 title="test">Test</h1>');
+                done();
+            });
+        });
+
+        it('should parsed template with only with $templateCache injection', function(done) {
+            templatefy(['--input=\'<h1  title = "test">Test</h1>\'', '--angular', '--angular-module=false'], function(error, stdout, stderr) {
+                expect(stdout).to.not.have.string('angular.module');
+                expect(stdout).to.have.string('$templateCache');
+                expect(stdout).to.have.string('<h1 title="test">Test</h1>');
+                done();
+            });
+        });
+
+        it('should parsed template with only with $templateCache injection and custom template name', function(done) {
+            templatefy(['--input=\'<h1  title = "test">Test</h1>\'', '--angular', '--angular-module=false', '--angular-template-name=template_test'], function(error, stdout, stderr) {
+                expect(stdout).to.not.have.string('angular.module');
+                expect(stdout).to.have.string('$templateCache');
+                expect(stdout).to.have.string('template_test');
                 expect(stdout).to.have.string('<h1 title="test">Test</h1>');
                 done();
             });
