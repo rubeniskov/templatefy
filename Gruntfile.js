@@ -3,7 +3,7 @@ module.exports = function(grunt) {
         'npm-publish': {
             options: {
                 abortIfDirty: true,
-                commit: false,
+                commit: false
             }
         },
         'bump': {
@@ -20,7 +20,7 @@ module.exports = function(grunt) {
                 push: true,
                 pushTo: 'origin',
                 gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d',
-                metadata: '',
+                metadata: ''
             }
         }
     });
