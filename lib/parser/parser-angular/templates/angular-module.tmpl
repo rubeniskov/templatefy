@@ -1,7 +1,11 @@
-var {%module.var%};
+(function(angular){
+    var {%module.var%};
 
-try {
-    {%module.var%} = angular.module('{%module.name%}');
-} catch (e) {
-    {%module.var%} = angular.module('{%module.name%}', [{%module.stdeps%}]);
-}
+    try {
+        {%module.var%} = angular.module('{%module.name%}');
+    } catch (e) {
+        {%module.var%} = angular.module('{%module.name%}', [{%module.stdeps%}]);
+    }
+        %s
+    return {%module.var%}.name;
+})({%shim%});
