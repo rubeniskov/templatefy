@@ -44,7 +44,7 @@ To use, add the `require` node module:
 Test in your browser
 ===================
 
-[Try this snippet!!](https://tonicdev.com/573fe57597dbc611008736fd/573fe57597dbc611008736fe)
+[Try this snippet!!](https://tonicdev.com/rubeniskov/573fe76d605bca1100d6cf53)
 
 ```JavaScript
     const Templatefy = require("templatefy")
