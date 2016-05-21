@@ -22,7 +22,7 @@ const
 
         .option('input', {
             abbr: 'i',
-            help: 'Input html file template',
+            help: 'Input html file or string template',
             required: tty,
             trasnform: function(value) {
                 console.log(value);
@@ -31,38 +31,73 @@ const
         })
         .option('output', {
             abbr: 'o',
-            help: 'Output compiled js file templated'
+            help: 'Output compiled JavaScript file templated'
         })
-        .option('minify', {
-            abbr: 'm',
+        .option('scope', {
+            abbr: 's',
             flag: true,
-            default: Templatefy.defaults.minify,
-            help: 'Enable HTML minification process; for minify options --minify-<option-name>',
-            transform: function(value){
-                return value === true ? {} : false;
-            }
+            default: false,
+            help: 'Enable scope function to prevent collition declarations'
+        })
+        .option('exports', {
+            abbr: 'e',
+            flag: true,
+            default: false,
+            help: 'Exports the template using commonjs module exports'
+        })
+        .option('var', {
+            abbr: 'r',
+            help: 'Store the template into a variable'
+        })
+        .option('global', {
+            abbr: 'g',
+            help: 'Store the template into a global property <global:property>'
         })
         .option('angular', {
             abbr: 'a',
             flag: true,
             default: Templatefy.defaults.angular,
-            help: 'Angular templateCache injection',
+            help: 'Enable Angular templateCache injection; for angular options use --angular-<option-name>',
             transform: function(value){
                 return value === true ? {} : false;
             }
         })
-        .option('log-level', {
-            abbr: 'll',
+        .option('linter', {
+            abbr: 'l',
             flag: true,
-            default: Templatefy.defaults.log.level,
-            help: 'Enable HTML minification process; for minify options --minify-<option-name>'
+            default: Templatefy.defaults.linter,
+            help: 'Enable Linter validation; for linter options use --linter-<option-name>',
+            transform: function(value){
+                return value === true ? {} : false;
+            }
         })
-        .option('log-file', {
-            abbr: 'lf',
+        .option('minify', {
+            abbr: 'm',
             flag: true,
-            default: Templatefy.defaults.log.file,
-            help: 'Enable HTML minification process; for minify options --minify-<option-name>'
+            default: Templatefy.defaults.minify,
+            help: 'Enable log ouput; for log options use --minify-<option-name>',
+            transform: function(value){
+                return value === true ? {} : false;
+            }
         })
+        .option('log', {
+            abbr: 'V',
+            flag: true,
+            default: false,
+            help: 'Enable HTML minification process; for minify options use --log-<option-name>'
+        })
+//        .option('log-level', {
+//            abbr: 'll',
+//            flag: true,
+//            default: Templatefy.defaults.log.level,
+//            help: 'Enable HTML minification process; for minify options --minify-<option-name>'
+//        })
+//        .option('log-file', {
+//            abbr: 'lf',
+//            flag: true,
+//            default: Templatefy.defaults.log.file,
+//            help: 'Enable HTML minification process; for minify options --minify-<option-name>'
+//        })
         .option('version', {
             abbr: 'v',
             flag: true,
