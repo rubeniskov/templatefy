@@ -53,7 +53,7 @@ const
     };
 
 describe('Templatefy', function() {
-
+  
     describe('#command-line', function() {
         this.timeout(15000);
         it('should print help to stdout', function(done) {
@@ -61,9 +61,13 @@ describe('Templatefy', function() {
                 expect(stdout).to.have.string('Usage:');
                 expect(stdout).to.have.string('-i, --input');
                 expect(stdout).to.have.string('-o, --output');
-                expect(stdout).to.have.string('-m, --minify');
-                expect(stdout).to.have.string('-ll, --log-level');
-                expect(stdout).to.have.string('-lf, --log-file');
+                expect(stdout).to.have.string('-s, --scope');
+                expect(stdout).to.have.string('-e, --exports');
+                expect(stdout).to.have.string('-r, --var');
+                expect(stdout).to.have.string('-g, --global');
+                expect(stdout).to.have.string('-a, --angular');
+                expect(stdout).to.have.string('-l, --linter');
+                expect(stdout).to.have.string('-V, --log');
                 expect(stdout).to.have.string('-v, --version ');
                 done();
             });
