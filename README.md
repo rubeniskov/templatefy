@@ -41,6 +41,21 @@ To use, add the `require` node module:
 
 ```
 
+Test in your browser
+===================
+
+[Try this snippet!!](https://tonicdev.com/573fe57597dbc611008736fd/573fe57597dbc611008736fe)
+
+```JavaScript
+    const Templatefy = require("templatefy")
+
+    Templatefy.parse({
+        angular: true
+    },'<h1>{{Title}}<h2>{{Subtitle}}', function(err, data){
+          console.log(data);
+    });
+```
+
 [![WTF][wtfpl-img]][wtfpl-url]
 
 [site-url]: http://templatefy.rubeniskov.com
