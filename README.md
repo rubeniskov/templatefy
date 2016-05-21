@@ -3,6 +3,7 @@
 [![Build Status][travis-badge]][travis-url]
 [![Coverage Status][coverage-badge]][coverage-url]
 [![Climate Status][codeclimate-badge]][codeclimate-url]
+[![Commits][github-commits-badge]][npm-url]
 [![Issues Open][issues-open-badge]][issues-url]
 [![Issue Resolution][issues-reso-badge]][issues-url]
 
@@ -79,6 +80,7 @@ Test in your browser
 [slack-url]: http://slack.rubeniskov.com/
 [slack-badge]: http://slack.rubeniskov.com/badge.svg
 
+[github-commits-badge]: https://img.shields.io/github/commits-since/rubeniskov/templatefy/v0.0.1.svg
 [version-badge]: https://img.shields.io/npm/v/templatefy.svg
 [downloads-badge]: https://img.shields.io/npm/dm/templatefy.svg
 [node-badge]: https://img.shields.io/node/v/templatefy.svg
