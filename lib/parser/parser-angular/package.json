@@ -5,9 +5,9 @@
   "main": "parser.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rubeniskov/browserify-templatefy.git",
-    "url_commit": "git+https://github.com/rubeniskov/browserify-templatefy/commit",
-    "url_tag": "git+https://github.com/rubeniskov/browserify-templatefy/releases/tag"
+    "url": "git+https://github.com/rubeniskov/templatefy.git",
+    "url_commit": "git+https://github.com/rubeniskov/templatefy/commit",
+    "url_tag": "git+https://github.com/rubeniskov/templatefy/releases/tag"
   },
   "keywords": [
     "templatefy",
@@ -22,11 +22,11 @@
   "licenses": [
     {
       "type": "WTFPL",
-      "url": "https://github.com/rubeniskov/browserify-templatefy/blob/master/LICENSE.md"
+      "url": "https://github.com/rubeniskov/templatefy/blob/master/LICENSE.md"
     }
   ],
   "bugs": {
-    "url": "https://github.com/rubeniskov/browserify-templatefy/issues"
+    "url": "https://github.com/rubeniskov/templatefy/issues"
   },
   "homepage": "http://templatefy.rubeniskov.com"
 }
