@@ -4,7 +4,6 @@ const fs = require('fs')
 
 Templatefy.parse('./template-element.html', './template-element.js');
 
-
 Templatefy.parse({
     var: 'exampleVar'
 },'./template-element.html', './template-element-with-var.js');
@@ -27,4 +26,4 @@ Templatefy.parse({
     exports: true,
     global: 'exampleGlobalVarName:exampleGlobalPropertyName',
     var: 'exampleVar'
-},'./template-element.html', './template-element-with-full.js');
+},'./template-element.html', './template-element-full.js');
