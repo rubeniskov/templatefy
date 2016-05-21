@@ -1,13 +1,9 @@
 language: node_js
 node_js:
   - "v6.1.0"
-  - "v5.11.1"
-  - "v4.4.4"
-  - "v0.12"
-  - "v0.10.45"
-  - "iojs-v1.8.4"
-  - "iojs-v2.5.0"
-  - "iojs-v3.3.1"
+addons:
+    code_climate:
+        repo_token: 29e2002d01831dd23cfada7821ca4c971b02742fb63b56b49f5d0418585e1142
 notifications:
   slack: rubeniskov:I82ZGuYOEQrhl29wBbQFEdjP#templatefy
 install:
