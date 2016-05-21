@@ -31,9 +31,13 @@ To use, add the `require` node module:
 
     const Templatefy = require('templatefy');
 
-    Templatefy.parse({
-        angular: true
-    }, 'path/of/input-file', 'path/of/ouput-file');
+    Templatefy.parse('path/of/input-file.html', 'path/of/ouput-file.js');
+
+    // path/of/input-file.html
+    // <h1><h2><h3>
+
+    // path/of/ouput-file.js
+    // '<h1><h2><h3></h3></h2></h1>'
 
 ```
 
