@@ -1,6 +1,7 @@
 const
     path = require('path'),
     fs = require('fs'),
+    rewire = require("rewire"),
     expect = require("chai").expect,
     execFile = require('child_process').execFile,
     cproc = require('child_process'),
@@ -53,7 +54,7 @@ const
     };
 
 describe('Templatefy', function() {
-  
+
     describe('#command-line', function() {
         this.timeout(15000);
         it('should print help to stdout', function(done) {
@@ -79,14 +80,12 @@ describe('Templatefy', function() {
                 done();
             });
         });
-
 //        it('should require --input argument if not pipe stdin defined', function(done) {
 //            templatefy('--ouput=stdout', function(error, stdout, stderr) {
 //                expect(stdout).to.have.string('input argument is required');
 //                done();
 //            });
 //        });
-
         it('should show error unexpected paramenter message', function(done) {
             templatefy('--wrong-param', function(error, stdout, stderr) {
                 expect(stdout).to.have.string('\'--wrong-param\' expects a value');
@@ -166,6 +165,65 @@ describe('Templatefy', function() {
                 expect(stdout).to.have.string('$templateCache');
                 expect(stdout).to.have.string('template_test');
                 expect(stdout).to.have.string('<h1 title="test">Test</h1>');
+                done();
+            });
+        });
+
+        it('should parsed template scoped in a function clousure', function(done) {
+            templatefy(['--input=\'<h1  title = "test">Test</h1>\'', '--scope'], function(error, stdout, stderr) {
+                expect(stdout).to.have.string('!(function(global, module){');
+                expect(stdout).to.have.string('typeof global !== "undefined"');
+                expect(stdout).to.have.string('<h1 title="test">Test</h1>');
+                done();
+            });
+        });
+
+        it('should parsed template with variable assignment', function(done) {
+            templatefy(['--input=\'<h1  title = "test">Test</h1>\'', '--var=var_test'], function(error, stdout, stderr) {
+                expect(stdout).to.have.string('var var_test');
+                expect(stdout).to.have.string('<h1 title="test">Test</h1>');
+                done();
+            });
+        });
+
+        it('should parsed template with global property assignment', function(done) {
+            templatefy(['--input=\'<h1  title = "test">Test</h1>\'', '--global=globalTest:globalProperty'], function(error, stdout, stderr) {
+                expect(stdout).to.have.string('globalTest[\'globalProperty\']');
+                expect(stdout).to.have.string('<h1 title="test">Test</h1>');
+                done();
+            });
+        });
+
+        it('should parsed template with global property assignment in window', function(done) {
+            templatefy(['--input=\'<h1  title = "test">Test</h1>\'', '--global=globalProperty'], function(error, stdout, stderr) {
+                expect(stdout).to.have.string('window');
+                expect(stdout).to.have.string('<h1 title="test">Test</h1>');
+                done();
+            });
+        });
+
+        it('should parsed template with global property assignment in global', function(done) {
+            templatefy(['--input=\'<h1  title = "test">Test</h1>\'', '--global=globalProperty --scope'], function(error, stdout, stderr) {
+                expect(stdout).to.have.string('global');
+                expect(stdout).to.have.string('<h1 title="test">Test</h1>');
+                done();
+            });
+        });
+
+        it('should parsed template and exports as module', function(done) {
+            templatefy(['--input=\'<h1  title = "test">Test</h1>\'' , '--output=unit-test-module.js', '--exports'], function(error, stdout, stderr) {
+                var template = require(path.join(process.cwd(), './unit-test-module.js'));
+                expect(template).to.have.string('<h1 title="test">Test</h1>');
+                done();
+            });
+        });
+
+        it('should parsed template and exports as global property in a scoped clousure', function(done) {
+            templatefy(['--input=\'<h1  title = "test">Test</h1>\'' , '--output=unit-test-module.js', '--scope', '--global=templatefy'], function(error, stdout, stderr) {
+                expect(global.templatefy).to.not.be.ok;
+                rewire(path.join(process.cwd(), './unit-test-module.js'));
+                expect(global.templatefy).to.be.ok;
+                expect(global.templatefy).to.have.string('<h1 title="test">Test</h1>');
                 done();
             });
         });
