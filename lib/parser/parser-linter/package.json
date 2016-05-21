@@ -1,0 +1,32 @@
+{
+  "name": "parser-linter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "parser.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rubeniskov/templatefy.git",
+    "url_commit": "git+https://github.com/rubeniskov/templatefy/commit",
+    "url_tag": "git+https://github.com/rubeniskov/templatefy/releases/tag"
+  },
+  "keywords": [
+    "templatefy",
+    "parser",
+    "minify"
+  ],
+  "author": {
+    "name": "Rubén López Gómez",
+    "email": "me@rubeniskov.com",
+    "url": "https://twitter.com/Rubeniskov"
+  },
+  "licenses": [
+    {
+      "type": "WTFPL",
+      "url": "https://github.com/rubeniskov/templatefy/blob/master/LICENSE.md"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/rubeniskov/templatefy/issues"
+  },
+  "homepage": "http://templatefy.rubeniskov.com"
+}
