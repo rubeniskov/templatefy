@@ -1,3 +1,3 @@
-!(function(global){
+!(function(global, module){
       %s
-})(typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+})(typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {}, module || {})
