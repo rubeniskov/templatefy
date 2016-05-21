@@ -55,7 +55,7 @@ const
 describe('Templatefy', function() {
 
     describe('#command-line', function() {
-        this.timeout(5000);
+        this.timeout(15000);
         it('should print help to stdout', function(done) {
             templatefy('--help', function(error, stdout, stderr) {
                 expect(stdout).to.have.string('Usage:');
