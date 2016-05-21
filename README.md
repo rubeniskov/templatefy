@@ -1,8 +1,8 @@
 # Templatefy
 
 [![Build Status][travis-badge]][travis-url]
-[![Coverage Status][coverage-badge]][coverage-url]
-[![Climate Status][codeclimate-badge]][codeclimate-url]
+[![Coverage Status][codeclimate-coverage-badge]][codecov-url]
+[![GPA Status][codeclimate-gpa-badge]][codeclimate-url]
 [![Commits][github-commits-badge]][npm-url]
 [![Issues Open][issues-open-badge]][issues-url]
 [![Issue Resolution][issues-reso-badge]][issues-url]
@@ -16,7 +16,7 @@
 [Templatefy][site-url] is a html template manager with js injection, angular supported.
 
 [![NPM][npm-img]][npm-url]
-[![GRID][coverage-img]][coverage-url]
+[![GRID][codecov-img]][codecov-url]
 
 Installation
 ============
@@ -71,11 +71,12 @@ Test in your browser
 [license-badge]: https://img.shields.io/badge/license-WTFPL-blue.svg
 
 [codeclimate-url]: https://codeclimate.com/github/rubeniskov/templatefy
-[codeclimate-badge]: https://codeclimate.com/github/rubeniskov/templatefy/badges/gpa.svg
+[codeclimate-gpa-badge]: https://codeclimate.com/github/rubeniskov/templatefy/badges/gpa.svg
+[codeclimate-coverage-badge]: https://codeclimate.com/github/rubeniskov/templatefy/badges/coverage.svg
 
-[coverage-url]: https://codecov.io/github/rubeniskov/templatefy
-[coverage-img]: https://codecov.io/gh/rubeniskov/templatefy/branch/master/graphs/icicle.svg?width=400&height=72
-[coverage-badge]: https://img.shields.io/codecov/c/github/rubeniskov/templatefy.svg
+[codecov-url]: https://codecov.io/github/rubeniskov/templatefy
+[codecov-img]: https://codecov.io/gh/rubeniskov/templatefy/branch/master/graphs/icicle.svg?width=400&height=72
+[codecov-badge]: https://img.shields.io/codecov/c/github/rubeniskov/templatefy.svg
 
 [slack-url]: http://slack.rubeniskov.com/
 [slack-badge]: http://slack.rubeniskov.com/badge.svg
