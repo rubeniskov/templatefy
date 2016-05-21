@@ -20,3 +20,11 @@ Templatefy.parse({
 Templatefy.parse({
     scope: true
 },'./template-element.html', './template-element-with-scope.js');
+
+
+Templatefy.parse({
+    scope: true,
+    exports: true,
+    global: 'exampleGlobalVarName:exampleGlobalPropertyName',
+    var: 'exampleVar'
+},'./template-element.html', './template-element-with-full.js');
