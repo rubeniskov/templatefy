@@ -1,6 +1,6 @@
 {
   "name": "templatefy",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A html template manager with js injection, angular supported",
   "main": "index.js",
   "engines": {
