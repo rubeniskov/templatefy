@@ -42,6 +42,80 @@ To use, add the `require` node module:
 
 ```
 
+## Options
+
+### scope
+Type: `Boolean`
+Default: `false`
+
+Enable function clousure for prevent variable collisions.
+
+### exports
+Type: `Boolean`
+Default: `false`
+
+Enable commonjs module.exports.
+
+### global
+Type: `String`
+Default: `null`
+
+Global variable expose `global:property`.
+
+### var
+Type: `String`
+Default: `null`
+
+Local variable name.
+
+### angular
+Type: `Boolean` `Object`
+Default: `false`
+
+Enable angular templateCache injection.
+
+### angular.shim
+Type: `String`
+Default: `angular`
+
+Angular variable name or factory.
+
+### angular.module.name
+Type: `String`
+Default: `templatefy`
+
+Angular templatefy module name.
+
+### angular.module.var
+Type: `String`
+Default: `templatefy`
+
+Angular templatefy module variable name.
+
+### angular.module.name
+Type: `String`
+Default: `templatefy`
+
+Angular templatefy module name.
+
+### angular.module.deps
+Type: `Array` `String`
+Default: `null`
+
+Angular templatefy module dependencies.
+
+### angular.module.run.args
+Type: `Array` `String`
+Default: `null`
+
+Angular templatefy module run dependencies.
+
+### angular.template
+Type: `Array` `String`
+Default: `null`
+
+Angular templatefy template name.
+
 Test in your browser
 ===================
 
