@@ -91,11 +91,22 @@ module.exports = function(expect){
             });
         });
 
-        it('should parsed template with angular module wrapper and defined custom module name', function(done) {
+        it('should parsed template with angular module wrapper and customize module name', function(done) {
             cli(['--input=<h1  title = "test">Test</h1>', '--angular', '--angular-module-name=module_test'], function(error, stdout, stderr) {
                 expect(stdout).to.have.string('angular.module');
                 expect(stdout).to.have.string('$templateCache');
                 expect(stdout).to.have.string('module_test');
+                expect(stdout).to.have.string('<h1 title="test">Test</h1>');
+                done();
+            });
+        });
+
+        it('should parsed template with angular module wrapper with custom dependencies', function(done) {
+            cli(['--input=<h1  title = "test">Test</h1>', '--angular', '--angular-module-deps=ngRoute,ngAnimate'], function(error, stdout, stderr) {
+                expect(stdout).to.have.string('angular.module');
+                expect(stdout).to.have.string('$templateCache');
+                expect(stdout).to.have.string('ngRoute');
+                expect(stdout).to.have.string('ngAnimate');
                 expect(stdout).to.have.string('<h1 title="test">Test</h1>');
                 done();
             });
