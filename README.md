@@ -18,13 +18,94 @@
 [![NPM][npm-img]][npm-url]
 [![GRID][codecov-img]][codecov-url]
 
-Installation
-============
+## Table of contents
+
+* [Installation](#installation)
+* [CLI Usage](#CLI)
+  - [Options](#CLI)
+  - [Examples](#CLI)
+* [API Usage](#API)
+  - [Options](#CLI)
+  - [Examples](#CLI)
+* [Documentation](#documentation)
+* [Contributing](#contributing)
+* [Community](#community)
+* [Creators](#creators)
+* [Copyright and license](#copyright-and-license)
+
+
+## Installation
 
 Install with `npm install templatefy --save`.
 
-Usage
-=====
+## CLI (Command line interface)
+
+You can use Templatefy as command line tool, installing as global library with `npm i -g templatefy` and execute with the command `templatefy`.
+To show options type: `templatefy --help` or with flag `-h`.
+
+### Options
+
+```shell
+Usage: /usr/local/bin/node templatefy [options]
+
+Options:
+   -i, --input     Input html file or string raw template
+   -o, --output    Output compiled JavaScript file template
+   -s, --scope     Enable scope function to prevent collition declarations  [false]
+   -e, --exports   Exports the template using commonjs module exports  [false]
+   -r, --var       Store the template into a variable
+   -g, --global    Store the template into a global property <global:property>
+   -a, --angular   Enable Angular templateCache injection; for angular options use --angular-<option-name>  [false]
+   -l, --linter    Enable Linter validation; for linter options use --linter-<option-name>  [false]
+   -m, --minify    Enable HTML minification process; for log options use --minify-<option-name>  [false]
+   -V, --log       Enable log output; for minify options use --log-<option-name>  [false]
+   -v, --version   Print version and exit
+```
+
+### Usage
+
+This example shows how to pass through stdin a template obtaining the output to the stdout:
+
+```shell
+echo '<h1>Hola</h1>' | templatefy --var=example
+
+# ouput
+# var example = '<h1>Hola</h1>';
+```
+
+As you can see it's possible use any string passed into the templatefy stdin, another example using the command `cat`:
+
+```shell
+cat index.html | templatefy --exports
+
+# ouput
+# module.exports = '<h1>Hola</h1>';
+```
+
+If want parse a html file using the command arguments, you can define the file path using `--input` and `--ouput` to define the output result
+By default if you don't define `--output` it be will print the result in the promt stdout.
+
+```shell
+echo '<h1>Hola</h1>' > template.html
+
+cat template.html | templatefy --exports
+# or
+templatefy --input=./template.html --exports
+# or
+templatefy --input="<h1>Hola</h1>" --exports
+
+# ouput
+# module.exports = '<h1>Hola</h1>';
+
+cat template.html | templatefy --exports --ouput=./ouput.js
+
+# contents of ouput.js
+# module.exports = '<h1>Hola</h1>';
+```
+
+Note: **you can copy the above code and paste in your terminal** try it!.
+
+## API (Application Programming Interface)
 
 To use, add the `require` node module:
 
@@ -34,83 +115,87 @@ To use, add the `require` node module:
 
     Templatefy.parse('path/of/input-file.html', 'path/of/ouput-file.js');
 
-    // path/of/input-file.html
-    // <h1><h2><h3>
-
-    // path/of/ouput-file.js
-    // '<h1><h2><h3></h3></h2></h1>'
-
 ```
 
-## Options
+#### Input (`path/of/input-file.html`)
+```html
+    <h1><h2><h3>
+```
 
-### scope
+#### Output (`path/of/ouput-file.js`)
+```JavaScript
+    '<h1><h2><h3></h3></h2></h1>'
+```
+
+### Options
+
+#### scope
 Type: `Boolean`
 Default: `false`
 
 Enable function clousure for prevent variable collisions.
 
-### exports
+#### exports
 Type: `Boolean`
 Default: `false`
 
 Enable commonjs module.exports.
 
-### global
+#### global
 Type: `String`
 Default: `null`
 
 Global variable expose `global:property`.
 
-### var
+#### var
 Type: `String`
 Default: `null`
 
 Local variable name.
 
-### angular
+#### angular
 Type: `Boolean` `Object`
 Default: `false`
 
 Enable angular templateCache injection.
 
-### angular.shim
+#### angular.shim
 Type: `String`
 Default: `angular`
 
 Angular variable name or factory.
 
-### angular.module.name
+#### angular.module.name
 Type: `String`
 Default: `templatefy`
 
 Angular templatefy module name.
 
-### angular.module.var
+#### angular.module.var
 Type: `String`
 Default: `templatefy`
 
 Angular templatefy module variable name.
 
-### angular.module.name
+#### angular.module.name
 Type: `String`
 Default: `templatefy`
 
 Angular templatefy module name.
 
-### angular.module.deps
+#### angular.module.deps
 Type: `Array` `String`
 Default: `null`
 
 Angular templatefy module dependencies.
 
-### angular.module.run.args
+#### angular.module.run.args
 Type: `Array` `String`
 Default: `null`
 
 Angular templatefy module run dependencies.
 
-### angular.template
+#### angular.template
 Type: `Array` `String`
 Default: `null`
 
@@ -131,7 +216,32 @@ Test in your browser
     });
 ```
 
-[![WTF][wtfpl-img]][wtfpl-url]
+## Documentation
+
+### TODO
+
+## Community
+
+Get updates on Templatefy's development and chat with the project maintainers and community members.
+
+* Follow me on [@rubeniskov on Twitter](https://twitter.com/rubeniskov) to get updates.
+* Read and subscribe to [The Official Templatefy Page](http://templatefy.rubeniskov.com).
+* Join [the official Slack room](http://slack.rubeniskov.com/#templatefy).
+* Chat with fellow templatefiers in IRC. On the `rubeniskov.irc.slack.com` server, in the `##templatefy` channel.
+* Developers should use the keyword `templatefy` on packages which modify or add to the functionality of Templatefy when distributing through [npm](https://www.npmjs.com/browse/keyword/templatefy) or similar delivery mechanisms for maximum discoverability.
+
+## Creators
+
+**Rubén López Gómez <me@rubeniskov.com>**
+
+* <https://twitter.com/rubeniskov>
+* <https://github.com/rubeniskov>
+* <http://rubeniskov.com>
+
+## Copyright and license
+
+Code copyright 2016 Rubeniskov released under [the MIT license][license-url].
+
 
 [site-url]: http://templatefy.rubeniskov.com
 
@@ -142,7 +252,7 @@ Test in your browser
 [travis-badge]: https://travis-ci.org/rubeniskov/templatefy.svg
 
 [license-url]: LICENSE
-[license-badge]: https://img.shields.io/badge/license-WTFPL-blue.svg
+[license-badge]: https://img.shields.io/badge/license-MIT-blue.svg
 
 [codeclimate-url]: https://codeclimate.com/github/rubeniskov/templatefy
 [codeclimate-gpa-badge]: https://codeclimate.com/github/rubeniskov/templatefy/badges/gpa.svg
@@ -163,6 +273,3 @@ Test in your browser
 [issues-url]: https://github.com/rubeniskov/templatefy/issues
 [issues-open-badge]: http://isitmaintained.com/badge/open/rubeniskov/templatefy.svg
 [issues-reso-badge]: http://isitmaintained.com/badge/resolution/rubeniskov/templatefy.svg
-
-[wtfpl-url]: http://www.wtfpl.net/
-[wtfpl-img]: http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl.svg
