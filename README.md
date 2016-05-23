@@ -21,13 +21,14 @@
 ## Table of contents
 
 * [Installation](#installation)
-* [CLI Usage](#CLI)
-  - [Options](#CLI)
-  - [Examples](#CLI)
-* [API Usage](#API)
-  - [Options](#CLI)
-  - [Examples](#CLI)
-* [Documentation](#documentation)
+* [CLI Usage](#cli-command-line-interface)
+  - [Options](#options-1)
+  - [Usage](#usage-0)
+* [API Usage](#api-application-programming-interface)
+  - [Options](#options-1)
+  - [Usage](#usage-1)
+* [Live Examples](#live-examples)
+* [Documentation](#documentation-wip)
 * [Contributing](#contributing)
 * [Community](#community)
 * [Creators](#creators)
@@ -45,7 +46,7 @@ To show options type: `templatefy --help` or with flag `-h`.
 
 ### Options
 
-```shell
+```plain
 Usage: /usr/local/bin/node templatefy [options]
 
 Options:
@@ -62,15 +63,17 @@ Options:
    -v, --version   Print version and exit
 ```
 
+[Go top](#table-of-contents)
+
 ### Usage
 
 This example shows how to pass through stdin a template obtaining the output to the stdout:
 
 ```shell
-echo '<h1>Hola</h1>' | templatefy --var=example
+echo '<h1>Foo</h1>' | templatefy --var=example
 
 # ouput
-# var example = '<h1>Hola</h1>';
+# var example = '<h1>Foo</h1>';
 ```
 
 As you can see it's possible use any string passed into the templatefy stdin, another example using the command `cat`:
@@ -79,53 +82,35 @@ As you can see it's possible use any string passed into the templatefy stdin, an
 cat index.html | templatefy --exports
 
 # ouput
-# module.exports = '<h1>Hola</h1>';
+# module.exports = '<h1>Foo</h1>';
 ```
 
 If want parse a html file using the command arguments, you can define the file path using `--input` and `--ouput` to define the output result
 By default if you don't define `--output` it be will print the result in the promt stdout.
 
 ```shell
-echo '<h1>Hola</h1>' > template.html
+echo '<h1>Foo</h1>' > template.html
 
 cat template.html | templatefy --exports
 # or
 templatefy --input=./template.html --exports
 # or
-templatefy --input="<h1>Hola</h1>" --exports
+templatefy --input="<h1>Foo</h1>" --exports
 
 # ouput
-# module.exports = '<h1>Hola</h1>';
+# module.exports = '<h1>Foo</h1>';
 
 cat template.html | templatefy --exports --ouput=./ouput.js
 
 # contents of ouput.js
-# module.exports = '<h1>Hola</h1>';
+# module.exports = '<h1>Foo</h1>';
 ```
 
-Note: **you can copy the above code and paste in your terminal** try it!.
+Note: **You can copy any pice of code from above and paste in your terminal.** Try it!.
+
+[Go top](#table-of-contents)
 
 ## API (Application Programming Interface)
-
-To use, add the `require` node module:
-
-```JavaScript
-
-    const Templatefy = require('templatefy');
-
-    Templatefy.parse('path/of/input-file.html', 'path/of/ouput-file.js');
-
-```
-
-#### Input (`path/of/input-file.html`)
-```html
-    <h1><h2><h3>
-```
-
-#### Output (`path/of/ouput-file.js`)
-```JavaScript
-    '<h1><h2><h3></h3></h2></h1>'
-```
 
 ### Options
 
@@ -201,10 +186,35 @@ Default: `null`
 
 Angular templatefy template name.
 
-Test in your browser
-===================
+[Go top](#table-of-contents)
 
-[Try this snippet!!](https://tonicdev.com/rubeniskov/573fe76d605bca1100d6cf53)
+### Usage
+
+To use, add the `require` node module:
+
+```JavaScript
+
+    const Templatefy = require('templatefy');
+
+    Templatefy.parse('path/of/input-file.html', 'path/of/ouput-file.js');
+
+```
+
+#### Input (`path/of/input-file.html`)
+```html
+    <h1><h2><h3>
+```
+
+#### Output (`path/of/ouput-file.js`)
+```JavaScript
+    '<h1><h2><h3></h3></h2></h1>'
+```
+
+[Go top](#table-of-contents)
+
+## Live examples
+
+Thanks to tonicdev.com you can test the bellow examples.
 
 ```JavaScript
     const Templatefy = require("templatefy")
@@ -216,19 +226,33 @@ Test in your browser
     });
 ```
 
-## Documentation
+[Try this snippet!!](https://tonicdev.com/rubeniskov/573fe76d605bca1100d6cf53)
+[Go top](#table-of-contents)
 
-### TODO
+## Documentation (WIP)
+
+I'm working hard to develop the documentation a soon as possible, sorry for the inconvenience.
+
+[Go top](#table-of-contents)
+
+## Contributing (WIP)
+
+### WIP
+
+[Go top](#table-of-contents)
+
 
 ## Community
 
 Get updates on Templatefy's development and chat with the project maintainers and community members.
 
 * Follow me on [@rubeniskov on Twitter](https://twitter.com/rubeniskov) to get updates.
-* Read and subscribe to [The Official Templatefy Page](http://templatefy.rubeniskov.com).
+* Read and subscribe to [The Official Templatefy Page](http://templatefy.rubeniskov.com) (WIP).
 * Join [the official Slack room](http://slack.rubeniskov.com/#templatefy).
 * Chat with fellow templatefiers in IRC. On the `rubeniskov.irc.slack.com` server, in the `##templatefy` channel.
 * Developers should use the keyword `templatefy` on packages which modify or add to the functionality of Templatefy when distributing through [npm](https://www.npmjs.com/browse/keyword/templatefy) or similar delivery mechanisms for maximum discoverability.
+
+[Go top](#table-of-contents)
 
 ## Creators
 
@@ -238,9 +262,13 @@ Get updates on Templatefy's development and chat with the project maintainers an
 * <https://github.com/rubeniskov>
 * <http://rubeniskov.com>
 
+[Go top](#table-of-contents)
+
 ## Copyright and license
 
 Code copyright 2016 Rubeniskov released under [the MIT license][license-url].
+
+[Go top](#table-of-contents)
 
 
 [site-url]: http://templatefy.rubeniskov.com
