@@ -2,18 +2,18 @@
 
 [![Build Status][travis-badge]][travis-url]
 [![Version][version-badge]][npm-url]
-[![Node][node-badge]][npm-url]
 [![Coverage Status][codeclimate-coverage-badge]][codecov-url]
 [![GPA Status][codeclimate-gpa-badge]][codeclimate-url]
 [![Commits][github-commits-badge]][npm-url]
 [![Issues Open][issues-open-badge]][issues-url]
 [![Issue Resolution][issues-reso-badge]][issues-url]
 
+[![Node][node-badge]][npm-url]
 [![Downloads][downloads-badge]][npm-url]
 [![Slack Status][slack-badge]][slack-url]
 [![Twitter][twitter-badge]][twitter-url]
 [![Paypal][paypal-badge]][paypal-url]
-[![Beerpay][beerpay-badge]]][beerpay-url]
+[![Beerpay][beerpay-badge]][beerpay-url]
 [![License][license-badge]][license-url]
 
 [Templatefy][site-url] is a html template manager with js injection, angular supported.
@@ -314,4 +314,4 @@ Code copyright 2016 Rubeniskov released under [the MIT license][license-url].
 [paypal-badge]: https://img.shields.io/badge/donate-PayPal-00457c.svg
 
 [beerpay-url]: https://beerpay.io/rubeniskov/templatefy
-[beerpay-badge]: https://beerpay.io/rubeniskov/templatefy/badge.svg
+[beerpay-badge]: https://beerpay.io/rubeniskov/templatefy/badge.svg?style=flat
