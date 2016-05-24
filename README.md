@@ -16,6 +16,7 @@
 [Templatefy][site-url] is a html template manager with js injection, angular supported.
 
 [![NPM][npm-img]][npm-url]
+[![NPM][npm-stats]][npm-url]
 [![GRID][codecov-img]][codecov-url]
 
 ## Table of contents
@@ -275,6 +276,7 @@ Code copyright 2016 Rubeniskov released under [the MIT license][license-url].
 
 [npm-url]: https://www.npmjs.com/package/templatefy
 [npm-img]: https://nodei.co/npm/templatefy.png?downloads=true
+[npm-stats]: https://nodei.co/npm-dl/templatefy.png?months=6
 
 [travis-url]: https://travis-ci.org/rubeniskov/templatefy?branch=master
 [travis-badge]: https://travis-ci.org/rubeniskov/templatefy.svg
@@ -287,7 +289,7 @@ Code copyright 2016 Rubeniskov released under [the MIT license][license-url].
 [codeclimate-coverage-badge]: https://codeclimate.com/github/rubeniskov/templatefy/badges/coverage.svg
 
 [codecov-url]: https://codecov.io/github/rubeniskov/templatefy
-[codecov-img]: https://codecov.io/gh/rubeniskov/templatefy/branch/master/graphs/icicle.svg?width=400&height=72
+[codecov-img]: https://codecov.io/gh/rubeniskov/templatefy/graphs/sunburst.svg
 [codecov-badge]: https://img.shields.io/codecov/c/github/rubeniskov/templatefy.svg
 
 [slack-url]: http://slack.rubeniskov.com/
