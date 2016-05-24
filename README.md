@@ -275,8 +275,8 @@ Code copyright 2016 Rubeniskov released under [the MIT license][license-url].
 [site-url]: http://templatefy.rubeniskov.com
 
 [npm-url]: https://www.npmjs.com/package/templatefy
-[npm-img]: https://nodei.co/npm/templatefy.png?downloads=true
-[npm-stats]: https://nodei.co/npm-dl/templatefy.png?months=6
+[npm-img]: https://nodei.co/npm/templatefy.png?downloads=true&downloadRank=true&stars=true
+[npm-stats]: https://nodei.co/npm-dl/templatefy.png?months=6&height=3
 
 [travis-url]: https://travis-ci.org/rubeniskov/templatefy?branch=master
 [travis-badge]: https://travis-ci.org/rubeniskov/templatefy.svg
