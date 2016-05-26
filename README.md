@@ -1,4 +1,4 @@
-# Templatefy
+# ƬΞMPLATEFY
 
 [![Build Status][travis-badge]][travis-url]
 [![Version][version-badge]][npm-url]
@@ -22,11 +22,12 @@
 [![NPM][npm-stats]][npm-url]
 [![GRID][codecov-img]][codecov-url]
 
-## Table of contents
+## (Ƭ) Table of contents
 
+* [Motivation](#motivation)
 * [Installation](#installation)
 * [CLI Usage](#cli-command-line-interface)
-  - [Options](#options-1)
+  - [Options](#options-0)
   - [Usage](#usage-0)
 * [API Usage](#api-application-programming-interface)
   - [Options](#options-1)
@@ -38,12 +39,11 @@
 * [Creators](#creators)
 * [Copyright and license](#copyright-and-license)
 
-
-## Installation
+## (Ƭ) Installation
 
 Install with `npm install templatefy --save`.
 
-## CLI (Command line interface)
+## (Ƭ) CLI (Command line interface)
 
 You can use Templatefy as command line tool, installing as global library with `npm i -g templatefy` and execute with the command `templatefy`.
 To show options type: `templatefy --help` or with flag `-h`.
@@ -51,27 +51,34 @@ To show options type: `templatefy --help` or with flag `-h`.
 ### Options
 
 ```plain
-Usage: /usr/local/bin/node templatefy [options]
+Usage: templatefy [options]
 
 Options:
-   -i, --input     Input html file or string raw template
-   -o, --output    Output compiled JavaScript file template
+   -i, --input     Input html file or string template
+   -o, --output    Output compiled JavaScript file templated
    -s, --scope     Enable scope function to prevent collition declarations  [false]
    -e, --exports   Exports the template using commonjs module exports  [false]
    -r, --var       Store the template into a variable
    -g, --global    Store the template into a global property <global:property>
    -a, --angular   Enable Angular templateCache injection; for angular options use --angular-<option-name>  [false]
    -l, --linter    Enable Linter validation; for linter options use --linter-<option-name>  [false]
-   -m, --minify    Enable HTML minification process; for log options use --minify-<option-name>  [false]
-   -V, --log       Enable log output; for minify options use --log-<option-name>  [false]
+   -m, --minify    Enable log ouput; for log options use --minify-<option-name>  [false]
+   -V, --log       Enable log trace; for log options use --log-<option-name>  [false]
    -v, --version   Print version and exit
+
+  █████████╗███████╗███╗   ███╗██████╗ ██╗      █████╗ ████████╗███████╗███████╗██╗   ██╗
+ ███╔═██╔══╝╚══════╝████╗ ████║██╔══██╗██║     ██╔══██╗╚══██╔══╝██╔════╝██╔════╝╚██╗ ██╔╝
+ ╚══╝ ██║   █████╗  ██╔████╔██║██████╔╝██║     ███████║   ██║   █████╗  █████╗   ╚████╔╝  
+      ██║   ╚════╝  ██║╚██╔╝██║██╔═══╝ ██║     ██╔══██║   ██║   ██╔══╝  ██╔══╝    ╚██╔╝   
+      ██║   ███████╗██║ ╚═╝ ██║██║     ███████╗██║  ██║   ██║   ███████╗██║        ██║    
+      ╚═╝   ╚══════╝╚═╝     ╚═╝╚═╝     ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═╝        ╚═╝  
 ```
 
 [Go top](#table-of-contents)
 
 ### Usage
 
-This example shows how to pass through stdin a template obtaining the output to the stdout:
+This example shows, how to pass the template through stdin and print the output into stdout:
 
 ```shell
 echo '<h1>Foo</h1>' | templatefy --var=example
@@ -80,7 +87,7 @@ echo '<h1>Foo</h1>' | templatefy --var=example
 # var example = '<h1>Foo</h1>';
 ```
 
-As you can see it's possible use any string passed into the templatefy stdin, another example using the command `cat`:
+As you can see, it's possible use any string passed into the templatefy stdin, another example using the command `cat`:
 
 ```shell
 cat index.html | templatefy --exports
@@ -90,7 +97,7 @@ cat index.html | templatefy --exports
 ```
 
 If want parse a html file using the command arguments, you can define the file path using `--input` and `--ouput` to define the output result
-By default if you don't define `--output` it be will print the result in the promt stdout.
+By default if you don't define the `--output` it will be printed by stdout.
 
 ```shell
 echo '<h1>Foo</h1>' > template.html
@@ -114,7 +121,7 @@ Note: **You can copy any pice of code from above and paste in your terminal.** T
 
 [Go top](#table-of-contents)
 
-## API (Application Programming Interface)
+## (Ƭ) API (Application Programming Interface)
 
 ### Options
 
@@ -216,7 +223,7 @@ To use, add the `require` node module:
 
 [Go top](#table-of-contents)
 
-## Live examples
+## (Ƭ) Live examples
 
 Thanks to tonicdev.com you can test the bellow examples.
 
@@ -233,13 +240,13 @@ Thanks to tonicdev.com you can test the bellow examples.
 [Try this snippet!!](https://tonicdev.com/rubeniskov/573fe76d605bca1100d6cf53)
 [Go top](#table-of-contents)
 
-## Documentation (WIP)
+## (Ƭ) Documentation (WIP)
 
 I'm working hard to develop the documentation a soon as possible, sorry for the inconvenience.
 
 [Go top](#table-of-contents)
 
-## Contributing (WIP)
+## (Ƭ) Contributing (WIP)
 
 ### WIP
 
@@ -258,7 +265,7 @@ Get updates on Templatefy's development and chat with the project maintainers an
 
 [Go top](#table-of-contents)
 
-## Creators
+## (Ƭ) Creators
 
 **Rubén López Gómez <me@rubeniskov.com>**
 
@@ -268,7 +275,7 @@ Get updates on Templatefy's development and chat with the project maintainers an
 
 [Go top](#table-of-contents)
 
-## Copyright and license
+## (Ƭ) Copyright and license
 
 Code copyright 2016 Rubeniskov released under [the MIT license][license-url].
 
