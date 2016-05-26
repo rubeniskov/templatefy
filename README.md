@@ -1,4 +1,4 @@
-# ƬΞMPLATEFY
+# ƬΞΞMPLATEFY
 
 [![Build Status][travis-badge]][travis-url]
 [![Version][version-badge]][npm-url]
@@ -22,7 +22,7 @@
 [![NPM][npm-stats]][npm-url]
 [![GRID][codecov-img]][codecov-url]
 
-## Ƭ Table of contents
+## ƬΞ - Table of contents
 
 * [Motivation](#motivation)
 * [Installation](#installation)
@@ -39,11 +39,11 @@
 * [Creators](#creators)
 * [Copyright and license](#copyright-and-license)
 
-## Ƭ Installation
+## ƬΞ - Installation
 
 Install with `npm install templatefy --save`.
 
-## Ƭ CLI (Command line interface)
+## ƬΞ - CLI (Command line interface)
 
 You can use Templatefy as command line tool, installing as global library with `npm i -g templatefy` and execute with the command `templatefy`.
 To show options type: `templatefy --help` or with flag `-h`.
@@ -121,7 +121,7 @@ Note: **You can copy any pice of code from above and paste in your terminal.** T
 
 [Go top](#table-of-contents)
 
-## Ƭ API (Application Programming Interface)
+## ƬΞ - API (Application Programming Interface)
 
 ### Options
 
@@ -223,7 +223,7 @@ To use, add the `require` node module:
 
 [Go top](#table-of-contents)
 
-## Ƭ Live examples
+## ƬΞ - Live examples
 
 Thanks to tonicdev.com you can test the bellow examples.
 
@@ -240,13 +240,13 @@ Thanks to tonicdev.com you can test the bellow examples.
 [Try this snippet!!](https://tonicdev.com/rubeniskov/573fe76d605bca1100d6cf53)
 [Go top](#table-of-contents)
 
-## Ƭ Documentation (WIP)
+## ƬΞ - Documentation (WIP)
 
 I'm working hard to develop the documentation a soon as possible, sorry for the inconvenience.
 
 [Go top](#table-of-contents)
 
-## Ƭ Contributing (WIP)
+## ƬΞ - Contributing (WIP)
 
 ### WIP
 
@@ -265,7 +265,7 @@ Get updates on Templatefy's development and chat with the project maintainers an
 
 [Go top](#table-of-contents)
 
-## Ƭ Creators
+## ƬΞ - Creators
 
 **Rubén López Gómez <me@rubeniskov.com>**
 
@@ -275,7 +275,7 @@ Get updates on Templatefy's development and chat with the project maintainers an
 
 [Go top](#table-of-contents)
 
-## Ƭ Copyright and license
+## ƬΞ - Copyright and license
 
 Code copyright 2016 Rubeniskov released under [the MIT license][license-url].
 
