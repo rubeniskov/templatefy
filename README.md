@@ -1,4 +1,4 @@
-# ƬΞΞMPLATEFY
+# ƬΞMPLATEFY
 
 [![Build Status][travis-badge]][travis-url]
 [![Version][version-badge]][npm-url]
