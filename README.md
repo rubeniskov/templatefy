@@ -24,20 +24,20 @@
 
 ## ƬΞ - Table of contents
 
-* [Motivation](#motivation)
-* [Installation](#installation)
-* [CLI Usage](#cli-command-line-interface)
+* [Motivation](#ƬΞ---motivation)
+* [Installation](#ƬΞ---installation)
+* [CLI Usage](#ƬΞ---cli-command-line-interface)
   - [Options](#options-0)
   - [Usage](#usage-0)
-* [API Usage](#api-application-programming-interface)
+* [API Usage](#ƬΞ---api-application-programming-interface)
   - [Options](#options-1)
   - [Usage](#usage-1)
-* [Live Examples](#live-examples)
-* [Documentation](#documentation-wip)
-* [Contributing](#contributing)
-* [Community](#community)
-* [Creators](#creators)
-* [Copyright and license](#copyright-and-license)
+* [Live Examples](#ƬΞ---live-examples)
+* [Documentation](#ƬΞ---documentation-wip)
+* [Contributing](#ƬΞ---contributing)
+* [Community](#ƬΞ---community)
+* [Creators](#ƬΞ---creators)
+* [Copyright and license](#ƬΞ---copyright-and-license)
 
 ## ƬΞ - Installation
 
