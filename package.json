@@ -49,7 +49,7 @@
   "homepage": "http://templatefy.rubeniskov.com",
   "dependencies": {
     "camelcase": "^3.0.0",
-    "html-minifier": "^2.1.2",
+    "html-minifier": "^3.4.0",
     "htmllint": "^0.3.0",
     "inherify": "0.0.2",
     "instsure": "^0.1.2",
@@ -60,7 +60,7 @@
     "through2": "^2.0.1",
     "underscore": "^1.8.3",
     "valtree": "^0.1.2",
-    "winston": "^2.2.0"
+    "winston": "^3.3.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
